@@ -1,0 +1,39 @@
+<%- include('../partials/header.ejs'); -%>
+
+<div class="container"> <br>
+    <a class="btn btn-primary" href="/message">Send Message</a>
+    <h3>Registered Users</h3>
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">SN</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Username</th>
+      <th scope="col">Payment Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let i = 0 %>
+    Registered Users: <%= result.length %>
+    <% result.forEach(element => { %>
+    	<tr>
+    	<th scope="row"><%= i+=1 %></th>
+        <td><%= element.firstname %></td>
+        <td><%= element.lastname %></td>
+        <td><%= element.email %></td>
+        <td><%= element.username %></td>
+        <% let stat = "" %>
+        <% if (element.payment_status == true) { %>
+              <% stat = "paid" %>
+        <% } %>
+        <td><%= stat %></td>
+        </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+</div>
+
+<%- include('../partials/footer.ejs'); -%>

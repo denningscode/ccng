@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs'); -%>
+
+<div class="container">
+   <h3>Messages</h3>
+   <div align="center">
+   <% result.forEach(element => { %>
+        <div class="card" style="width: 80%;padding: 20px">
+        <h3 class="card-title"> <%= element.messageHead %></h3>
+        <p class="card-body"><%= element.messageBody %></p>
+        </div> <br>
+   <% }); %>
+   </div>
+</div>
+
+<%- include('../partials/footer.ejs'); -%>

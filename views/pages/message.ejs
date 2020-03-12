@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs'); -%>
+
+<div class="container">
+    <h3>Send Message</h3>
+    Welcome back <%= admin %> <br>
+    <form action="/message" method="post">
+        <input required class="form-control" type="text" name="message_title" placeholder="Message Title:"> 
+        <br>
+        <textarea required class="form-control" name="message_body" placeholder="Enter Message:"></textarea> <br>
+        <input class="btn btn-primary" type="submit" value="Send">
+    </form>
+</div>
+
+<%- include('../partials/footer.ejs'); -%>
+
+

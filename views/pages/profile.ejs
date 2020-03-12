@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs'); -%>
+
+<div class="container">
+    <h3>Profile</h3>
+    <br>
+    <h4>Details:</h4>
+    <p>
+      First Name: <%= firstname %> <br>
+      Last Name: <%= lastname %> <br>
+      Username: <%= username %> <br>
+      Email: <%= email %> <br>
+      <% status = "" %> 
+      <% if (payment_status == true) { %>
+      	  <% status = "paid" %>
+      <% } %>
+      Payment Status: <%= status %> 
+
+      <p><a class="btn btn-success" href="/view_message">View Messages</a></p>
+    </p>
+</div>
+
+<%- include('../partials/footer.ejs'); -%>
